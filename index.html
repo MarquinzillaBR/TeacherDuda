@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /> <!-- Define o conjunto de caracteres como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Responsividade para dispositivos móveis -->
+  <title>QR Codes - ESCOLA NAVEGANTE</title> <!-- Título da página -->
+  <link rel="stylesheet" href="styles.css" /> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+    <!-- Frases sobre mãe -->
+    <div class="mom-quotes" id="quote">Aos olhos de uma mãe, todos os dias são únicos.</div>
+
+    <!-- Corações flutuantes -->
+    <div class="floating-hearts"></div>
+
+    <!-- Botões superiores para funcionalidades -->
+    <div class="top-buttons">
+        <button id="toggleLang">Português</button> <!-- Botão para alternar idioma -->
+        <button id="printBtn" aria-label="Print this page">🖨️</button> <!-- Botão para imprimir a página -->
+        <button id="toggleTheme" aria-label="Toggle theme">🌙</button> <!-- Botão para alternar tema -->
+    </div>
+
+    <h1 data-pt="Escaneie os QR Codes" data-en="Scan the QR Codes">Scan the QR Codes</h1> <!-- Título principal com suporte a idiomas -->
+
+    <div class="qrcode-container"> <!-- Container para os QR Codes -->
+        <div class="qrcode-item">
+            <h2 data-pt="TURMA - EI3 Integral" data-en="CLASS - EI3 Full-time">CLASS - EI3 Full-time</h2>
+            <a href="https://drive.google.com/drive/folders/140zI9lk-bAmcKew-5D-IHF9Ia_SvfZvS?usp=drive_link" target="_blank" id="qrcode1" aria-label="Link EI3 Integral"></a>
+        </div>
+        <div class="qrcode-item">
+            <h2 data-pt="TURMA - EI3 Matutino" data-en="CLASS - EI3 Morning">CLASS - EI3 Morning</h2>
+            <a href="https://drive.google.com/drive/folders/1Hynz49BA2ke5UmucZAJIPUmcqfHwiW_v?usp=drive_link" target="_blank" id="qrcode2" aria-label="Link EI3 Matutino"></a>
+        </div>
+        <div class="qrcode-item">
+            <h2 data-pt="TURMA - EI4 Integral" data-en="CLASS - EI4 Full-time">CLASS - EI4 Full-time</h2>
+            <a href="https://drive.google.com/drive/folders/1LmVBPLmsc2SxxdyhWoogKJnK-Y-Mdf-h?usp=drive_link" target="_blank" id="qrcode3" aria-label="Link EI4 Integral"></a>
+        </div>
+        <div class="qrcode-item">
+            <h2 data-pt="TURMA - EI5 Matutino" data-en="CLASS - EI5 Morning">CLASS - EI5 Morning</h2>
+            <a href="https://drive.google.com/drive/folders/1yg5uR2FU3A2hkEbkSjY_GdbRIratoNlW?usp=drive_link" target="_blank" id="qrcode4" aria-label="Link EI5 Matutino"></a>
+        </div>
+    </div>
+
+    <p class="note" data-pt="Cada QR Code leva para uma turma diferente. Verifique qual é a turma do seu filho."
+       data-en="Each QR Code leads to a different class. Check your child's class.">
+       Each QR Code leads to a different class. Check your child's class.
+    </p>
+
+    <!-- Rodapé -->
+    <footer>
+        <p><strong>ESCOLA NAVEGANTE</strong></p>
+        <p>Created by Marcus Lot, companion of Teacher Duda</p>
+        <p>&copy; <span id="year"></span></p> <!-- Ano dinâmico -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script> <!-- Biblioteca para gerar QR Codes -->
+    <script src="script.js"></script> <!-- Link para o arquivo JavaScript -->
+</body>
+</html>
