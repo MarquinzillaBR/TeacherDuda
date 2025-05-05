@@ -1,129 +1,178 @@
 :root {
-  /* Definição de variáveis de cores para o tema claro */
-  --bg: #fff0f5; /* Cor de fundo */
-  --text: #4b2e4c; /* Cor do texto */
-  --card-bg: #fffafc; /* Cor de fundo dos cartões */
-  --note: #805580; /* Cor das notas */
-  --accent: #d36ba6; /* Cor de destaque */
-  --hover: #f3d1e8; /* Cor ao passar o mouse */
+    /* Tema Claro */
+    --bg: #fff0f5;
+    --text: #4b2e4c;
+    --card-bg: #fffafc;
+    --note: #805580;
+    --accent: #d36ba6;
+    --hover: #f3d1e8;
 }
 
 body.dark {
-  /* Definição de variáveis de cores para o tema escuro */
-  --bg: #2e1a2f; /* Cor de fundo */
-  --text: #f9e6f2; /* Cor do texto */
-  --card-bg: #3e2b40; /* Cor de fundo dos cartões */
-  --note: #e0cbe0; /* Cor das notas */
-  --accent: #e27db1; /* Cor de destaque */
-  --hover: #4e374f; /* Cor ao passar o mouse */
+    /* Tema Escuro */
+    --bg: #2e1a2f;
+    --text: #f9e6f2;
+    --card-bg: #3e2b40;
+    --note: #e0cbe0;
+    --accent: #e27db1;
+    --hover: #4e374f;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte da página */
-  background: var(--bg); /* Cor de fundo usando variável */
-  color: var(--text); /* Cor do texto usando variável */
-  margin: 0; /* Remove margens padrão */
-  padding: 20px; /* Adiciona padding */
-  display: flex; /* Usando flexbox para layout */
-  flex-direction: column; /* Direção das colunas */
-  align-items: center; /* Centraliza os itens */
-  transition: background 0.3s ease, color 0.3s ease; /* Transição suave para mudanças de tema */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 h1 {
-  margin-top: 60px; /* Margem superior */
-  margin-bottom: 25px; /* Margem inferior */
-  text-align: center; /* Centraliza o texto */
-  font-family: "Segoe    Script", cursive; /* Fonte estilizada para o título */
+    margin-top: 60px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: "Segoe Script", cursive;
+    font-size: 28px;
+    color: var(--accent);
+}
+
+.mom-quotes {
+    font-size: 1.5em;
+    color: var(--accent);
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.floating-hearts {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    animation: float-hearts 5s infinite linear;
+}
+
+.floating-hearts::before,
+.floating-hearts::after {
+    content: '💖';
+    font-size: 2em;
+    animation: heart-bounce 1s infinite alternate;
+}
+
+@keyframes heart-bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+@keyframes float-hearts {
+    0% { transform: translateX(-50%) translateY(0); }
+    100% { transform: translateX(-50%) translateY(-30px); }
 }
 
 .qrcode-container {
-    display: grid; /* Usando grid para layout dos QR Codes */
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Cria colunas responsivas */
-    gap: 25px; /* Espaçamento entre os itens */
-    width: 100%; /* Largura total do container */
-    max-width: 720px; /* Largura máxima do container */
-    justify-items: center; /* Centraliza os itens dentro do grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 720px;
+    justify-items: center;
+    margin-top: 20px;
 }
 
 .qrcode-item {
-    background: var(--card-bg); /* Cor de fundo do item usando variável */
-    padding: 20px; /* Padding interno */
-    border-radius: 16px; /* Bordas arredondadas */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
-    text-align: center; /* Centraliza o texto dentro do item */
-    width: 180px; /* Largura fixa do item */
-    transition: transform 0.2s, background 0.3s; /* Transição suave para transformações e mudanças de fundo */
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 180px;
+    transition: transform 0.2s, background 0.3s;
 }
 
 .qrcode-item:hover {
-    background: var(--hover); /* Cor de fundo ao passar o mouse */
-    transform: scale(1.03); /* Aumenta ligeiramente o tamanho do item ao passar o mouse */
+    background: var(--hover);
+    transform: scale(1.03);
 }
 
 .qrcode-item h2 {
-    margin-bottom: 12px; /* Margem inferior do título */
-    font-size: 18px; /* Tamanho da fonte do título */
+    margin-bottom: 12px;
+    font-size: 18px;
 }
 
 .qrcode-item canvas {
-    transition: transform 0.2s ease; /* Transição suave para o canvas */
+    transition: transform 0.2s ease;
 }
 
 .qrcode-item canvas:hover {
-    transform: scale(1.05); /* Aumenta o tamanho do canvas ao passar o mouse */
+    transform: scale(1.05);
 }
 
 .note {
-    margin-top: 30px; /* Margem superior */
-    font-size: 14px; /* Tamanho da fonte da nota */
-    color: var(--note); /* Cor da nota usando variável */
-    text-align: center; /* Centraliza o texto da nota */
-    max-width: 720px; /* Largura máxima da nota */
+    margin-top: 30px;
+    font-size: 14px;
+    color: var(--note);
+    text-align: center;
+    max-width: 720px;
+    padding: 0 10px;
 }
 
 .top-buttons {
-    position: fixed; /* Fixa os botões no canto superior da página */
-    top: 10px; /* Distância do topo */
-    right: 10px; /* Distância da direita */
-    display: flex; /* Usando flexbox para layout dos botões */
-    gap: 10px; /* Espaçamento entre os botões */
-    z-index: 1000; /* Garante que os botões fiquem acima de outros elementos */
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
 }
 
 .top-buttons button {
-    padding: 6px 10px; /* Padding interno dos botões */
-    background: var(--accent); /* Cor de fundo dos botões usando variável */
-    color: white; /* Cor do texto dos botões */
-    border: none; /* Remove bordas padrão */
-    border-radius: 6px; /* Bordas arredondadas dos botões */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
-    font-size: 14px; /* Tamanho da fonte dos botões */
-    transition: background 0.2s; /* Transição suave para mudanças de fundo */
+    padding: 6px 10px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
 }
 
 .top-buttons button:hover {
-    background: var(--hover); /* Cor de fundo ao passar o mouse */
-    color: var(--text); /* Cor do texto ao passar o mouse */
+    background: var(--hover);
+    color: var(--text);
 }
 
 footer {
-    margin-top: 40px; /* Margem superior do rodapé */
-    text-align: center; /* Centraliza o texto do rodapé */
-    font-size: 13px; /* Tamanho da fonte do rodapé */
-    color: var(--note); /* Cor do texto do rodapé usando variável */
-    font-style: italic; /* Estilo itálico para o texto do rodapé */
+    margin-top: 40px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--note);
+    font-style: italic;
 }
 
 /* Responsividade */
 @media (max-width: 480px) {
     h1 {
-        font-size: 22px; /* Tamanho da fonte do título em telas pequenas */
+        font-size: 22px;
     }
     .qrcode-item h2 {
-        font-size: 16px; /* Tamanho da fonte do título dos QR Codes em telas pequenas */
+        font-size: 16px;
     }
     .note {
-        font-size: 13px; /* Tamanho da fonte da nota em telas pequenas */
+        font-size: 13px;
+    }
+    .top-buttons {
+        flex-direction: column;
+        top: 5px;
+        right: 5px;
+    }
+    .floating-hearts {
+        font-size: 1.5em;
+        top: 10px;
     }
 }

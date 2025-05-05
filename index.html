@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /> <!-- Define o conjunto de caracteres como UTF-8 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Responsividade para dispositivos móveis -->
-  <title>QR Codes - ESCOLA NAVEGANTE</title> <!-- Título da página -->
-  <link rel="stylesheet" href="styles.css" /> <!-- Link para o arquivo CSS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QR Codes - ESCOLA NAVEGANTE</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Frases sobre mãe -->
     <div class="mom-quotes" id="quote">Aos olhos de uma mãe, todos os dias são únicos.</div>
 
-    <!-- Corações flutuantes -->
-    <div class="floating-hearts"></div>
-
-    <!-- Botões superiores para funcionalidades -->
     <div class="top-buttons">
-        <button id="toggleLang">Português</button> <!-- Botão para alternar idioma -->
-        <button id="printBtn" aria-label="Print this page">🖨️</button> <!-- Botão para imprimir a página -->
-        <button id="toggleTheme" aria-label="Toggle theme">🌙</button> <!-- Botão para alternar tema -->
+        <button id="toggleLang">Português</button>
+        <button id="printBtn" aria-label="Print this page">🖨️</button>
+        <button id="toggleTheme" aria-label="Toggle theme">🌙</button>
     </div>
 
-    <h1 data-pt="Escaneie os QR Codes" data-en="Scan the QR Codes">Scan the QR Codes</h1> <!-- Título principal com suporte a idiomas -->
+    <h1 data-pt="Escaneie os QR Codes" data-en="Scan the QR Codes">Scan the QR Codes</h1>
 
-    <div class="qrcode-container"> <!-- Container para os QR Codes -->
+    <div class="qrcode-container">
         <div class="qrcode-item">
             <h2 data-pt="TURMA - EI3 Integral" data-en="CLASS - EI3 Full-time">CLASS - EI3 Full-time</h2>
             <a href="https://drive.google.com/drive/folders/140zI9lk-bAmcKew-5D-IHF9Ia_SvfZvS?usp=drive_link" target="_blank" id="qrcode1" aria-label="Link EI3 Integral"></a>
@@ -46,14 +41,13 @@
        Each QR Code leads to a different class. Check your child's class.
     </p>
 
-    <!-- Rodapé -->
     <footer>
-        <p><strong>ESCOLA NAVEGANTE</strong></p>
+        <p><strong>Colegio Navegantes</strong></p>
         <p>Created by Marcus Lot, companion of Teacher Duda</p>
-        <p>&copy; <span id="year"></span></p> <!-- Ano dinâmico -->
+        <p>&copy; <span id="year"></span></p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script> <!-- Biblioteca para gerar QR Codes -->
-    <script src="script.js"></script> <!-- Link para o arquivo JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
