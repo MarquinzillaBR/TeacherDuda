@@ -3,51 +3,79 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Título da página exibido na aba do navegador -->
     <title>QR Codes - ESCOLA NAVEGANTE</title>
+
+    <!-- Link para o arquivo de estilos externo -->
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+    <!-- Frase inicial (pode ser modificada para exibir mensagens diferentes) -->
     <div class="mom-quotes" id="quote">Aos olhos de uma mãe, todos os dias são únicos.</div>
 
-    <div class="top-buttons">
-        <button id="toggleLang">Português</button>
-        <button id="printBtn" aria-label="Print this page">🖨️</button>
-        <button id="toggleTheme" aria-label="Toggle theme">🌙</button>
+    <!-- Menu Dropdown no lugar dos botões tradicionais -->
+    <div class="dropdown">
+        <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-menu" id="dropdownBtn">Menu</button>
+
+        <!-- Itens do menu acessível -->
+        <div id="dropdown-menu" class="dropdown-content" role="menu" aria-labelledby="dropdownBtn">
+            <button id="toggleLang" role="menuitem" tabindex="0">Português</button> <!-- Alternar idioma -->
+            <button id="printBtn" aria-label="Print this page" role="menuitem" tabindex="0">🖨️</button> <!-- Imprimir página -->
+            <button id="toggleTheme" aria-label="Toggle theme" role="menuitem" tabindex="0">🌙</button> <!-- Mudar tema (claro/escuro) -->
+        </div>
     </div>
 
+    <!-- Título principal com suporte para múltiplos idiomas -->
     <h1 data-pt="Escaneie os QR Codes" data-en="Scan the QR Codes">Scan the QR Codes</h1>
 
+    <!-- Container com todos os QR Codes -->
     <div class="qrcode-container">
+
+        <!-- QR Code 1: EI3 Integral -->
         <div class="qrcode-item">
             <h2 data-pt="TURMA - EI3 Integral" data-en="CLASS - EI3 Full-time">CLASS - EI3 Full-time</h2>
             <a href="https://drive.google.com/drive/folders/140zI9lk-bAmcKew-5D-IHF9Ia_SvfZvS?usp=drive_link" target="_blank" id="qrcode1" aria-label="Link EI3 Integral"></a>
         </div>
+
+        <!-- QR Code 2: EI3 Matutino -->
         <div class="qrcode-item">
             <h2 data-pt="TURMA - EI3 Matutino" data-en="CLASS - EI3 Morning">CLASS - EI3 Morning</h2>
             <a href="https://drive.google.com/drive/folders/1Hynz49BA2ke5UmucZAJIPUmcqfHwiW_v?usp=drive_link" target="_blank" id="qrcode2" aria-label="Link EI3 Matutino"></a>
         </div>
+
+        <!-- QR Code 3: EI4 Integral -->
         <div class="qrcode-item">
             <h2 data-pt="TURMA - EI4 Integral" data-en="CLASS - EI4 Full-time">CLASS - EI4 Full-time</h2>
             <a href="https://drive.google.com/drive/folders/1LmVBPLmsc2SxxdyhWoogKJnK-Y-Mdf-h?usp=drive_link" target="_blank" id="qrcode3" aria-label="Link EI4 Integral"></a>
         </div>
+
+        <!-- QR Code 4: EI5 Matutino -->
         <div class="qrcode-item">
             <h2 data-pt="TURMA - EI5 Matutino" data-en="CLASS - EI5 Morning">CLASS - EI5 Morning</h2>
             <a href="https://drive.google.com/drive/folders/1yg5uR2FU3A2hkEbkSjY_GdbRIratoNlW?usp=drive_link" target="_blank" id="qrcode4" aria-label="Link EI5 Matutino"></a>
         </div>
+
     </div>
 
+    <!-- Nota explicativa com suporte para múltiplos idiomas -->
     <p class="note" data-pt="Cada QR Code leva para uma turma diferente. Verifique qual é a turma do seu filho."
        data-en="Each QR Code leads to a different class. Check your child's class.">
        Each QR Code leads to a different class. Check your child's class.
     </p>
 
+    <!-- Rodapé com informações de autoria -->
     <footer>
         <p><strong>Colegio Navegantes</strong></p>
         <p>Created by Marcus Lot, companion of Teacher Duda</p>
-        <p>&copy; <span id="year"></span></p>
+        <p>&copy; <span id="year"></span></p> <!-- Preenchido dinamicamente com o ano atual -->
     </footer>
 
+    <!-- Biblioteca de geração de QR Code (QRCode.js) -->
     <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+    <!-- Script personalizado com lógica de interações, temas, QR codes e tradução -->
     <script src="script.js"></script>
 </body>
 </html>

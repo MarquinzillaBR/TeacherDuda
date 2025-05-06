@@ -1,44 +1,48 @@
+/* Definindo as variáveis de tema claro e escuro */
 :root {
     /* Tema Claro */
-    --bg: #fff0f5;
-    --text: #4b2e4c;
-    --card-bg: #fffafc;
-    --note: #805580;
-    --accent: #d36ba6;
-    --hover: #f3d1e8;
+    --bg: #fff0f5; /* Fundo principal */
+    --text: #4b2e4c; /* Texto principal */
+    --card-bg: #fffafc; /* Fundo dos cards */
+    --note: #805580; /* Cor para notas e detalhes */
+    --accent: #d36ba6; /* Cor de destaque */
+    --hover: #f3d1e8; /* Cor de hover */
 }
 
+/* Tema Escuro */
 body.dark {
-    /* Tema Escuro */
-    --bg: #2e1a2f;
-    --text: #f9e6f2;
-    --card-bg: #3e2b40;
-    --note: #e0cbe0;
-    --accent: #e27db1;
-    --hover: #4e374f;
+    --bg: #2e1a2f; /* Fundo principal */
+    --text: #f9e6f2; /* Texto principal */
+    --card-bg: #3e2b40; /* Fundo dos cards */
+    --note: #e0cbe0; /* Cor para notas e detalhes */
+    --accent: #e27db1; /* Cor de destaque */
+    --hover: #4e374f; /* Cor de hover */
 }
 
+/* Corpo da página */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte principal */
+    background: var(--bg); /* Fundo baseado no tema */
+    color: var(--text); /* Cor do texto */
     margin: 0;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease; /* Transição suave ao mudar tema */
 }
 
+/* Título principal */
 h1 {
     margin-top: 60px;
     margin-bottom: 25px;
     text-align: center;
     font-family: "Segoe Script", cursive;
     font-size: 28px;
-    color: var(--accent);
+    color: var(--accent); /* Cor de destaque para o título */
 }
 
+/* Citações de mãe (exemplo de uso de frases) */
 .mom-quotes {
     font-size: 1.5em;
     color: var(--accent);
@@ -47,6 +51,7 @@ h1 {
     font-weight: bold;
 }
 
+/* Animação para corações flutuantes */
 .floating-hearts {
     position: absolute;
     top: 20px;
@@ -55,14 +60,14 @@ h1 {
     display: flex;
     justify-content: space-between;
     width: 100px;
-    animation: float-hearts 5s infinite linear;
+    animation: float-hearts 5s infinite linear; /* Animação infinita */
 }
 
 .floating-hearts::before,
 .floating-hearts::after {
-    content: '💖';
+    content: '💖'; /* Emoji de coração */
     font-size: 2em;
-    animation: heart-bounce 1s infinite alternate;
+    animation: heart-bounce 1s infinite alternate; /* Efeito de "pulo" do coração */
 }
 
 @keyframes heart-bounce {
@@ -75,9 +80,10 @@ h1 {
     100% { transform: translateX(-50%) translateY(-30px); }
 }
 
+/* Estilo do QR Code */
 .qrcode-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Grid responsivo */
     gap: 25px;
     width: 100%;
     max-width: 720px;
@@ -85,6 +91,7 @@ h1 {
     margin-top: 20px;
 }
 
+/* Estilo para cada item do QR Code */
 .qrcode-item {
     background: var(--card-bg);
     padding: 20px;
@@ -95,9 +102,10 @@ h1 {
     transition: transform 0.2s, background 0.3s;
 }
 
+/* Efeito de hover nos itens */
 .qrcode-item:hover {
     background: var(--hover);
-    transform: scale(1.03);
+    transform: scale(1.03); /* Leve aumento do item ao passar o mouse */
 }
 
 .qrcode-item h2 {
@@ -110,9 +118,10 @@ h1 {
 }
 
 .qrcode-item canvas:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Leve aumento no canvas ao passar o mouse */
 }
 
+/* Notas e detalhes adicionais */
 .note {
     margin-top: 30px;
     font-size: 14px;
@@ -122,6 +131,7 @@ h1 {
     padding: 0 10px;
 }
 
+/* Botões fixos no topo */
 .top-buttons {
     position: fixed;
     top: 10px;
@@ -131,6 +141,7 @@ h1 {
     z-index: 1000;
 }
 
+/* Estilo dos botões */
 .top-buttons button {
     padding: 6px 10px;
     background: var(--accent);
@@ -142,11 +153,13 @@ h1 {
     transition: background 0.2s;
 }
 
+/* Efeito de hover nos botões */
 .top-buttons button:hover {
     background: var(--hover);
     color: var(--text);
 }
 
+/* Rodapé da página */
 footer {
     margin-top: 40px;
     text-align: center;
@@ -155,24 +168,200 @@ footer {
     font-style: italic;
 }
 
-/* Responsividade */
+/* Responsividade para telas pequenas */
 @media (max-width: 480px) {
     h1 {
-        font-size: 22px;
+        font-size: 22px; /* Reduz o tamanho da fonte para h1 */
     }
     .qrcode-item h2 {
-        font-size: 16px;
+        font-size: 16px; /* Ajusta o tamanho da fonte dos QR codes */
     }
     .note {
-        font-size: 13px;
+        font-size: 13px; /* Ajuste no tamanho da fonte das notas */
     }
     .top-buttons {
         flex-direction: column;
         top: 5px;
-        right: 5px;
+        right: 5px; /* Ajusta a posição dos botões no mobile */
     }
     .floating-hearts {
         font-size: 1.5em;
-        top: 10px;
+        top: 10px; /* Ajuste da animação dos corações flutuantes em telas pequenas */
     }
+}
+
+
+/* Estilo do dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #007bff;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 4px 8px rgb(0 123 255 / 0.4);
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito de hover no botão do dropdown */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #90acc9;
+    outline: none;
+}
+
+/* Conteúdo do dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1000;
+    margin-top: 0.4rem;
+}
+
+/* Estilo das opções dentro do dropdown */
+.dropdown-content a {
+    color: #333;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+/* Efeito de hover nas opções do dropdown */
+.dropdown-content a:hover,
+.dropdown-content a:focus {
+    background-color: #007bff;
+    color: white;
+    outline: none;
+}
+
+/* Exibir o conteúdo do dropdown com animação */
+.show {
+    display: block;
+    animation: fadeIn 0.25s ease forwards;
+}
+
+/* Animação do dropdown */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Estilo dos botões fixos no topo */
+.top-buttons {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 12px; /* Aumentando o espaço entre os botões */
+    z-index: 1000;
+}
+
+/* Estilo dos botões */
+.top-buttons button {
+    padding: 10px 20px; /* Aumentando o tamanho para melhorar a interação */
+    background: var(--accent); /* Cor de fundo */
+    color: white;
+    border: none;
+    border-radius: 12px; /* Bordas mais arredondadas para um visual mais suave */
+    cursor: pointer;
+    font-size: 16px; /* Fonte maior para facilitar a leitura */
+    font-weight: bold; /* Deixando o texto mais marcante */
+    text-transform: uppercase; /* Deixando o texto maiúsculo para destaque */
+    transition: background 0.3s, transform 0.2s ease, box-shadow 0.2s ease; /* Transição suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adicionando sombra suave */
+}
+
+/* Efeito de hover nos botões */
+.top-buttons button:hover {
+    background: #f3d1e8; /* Cor de hover mais suave */
+    transform: scale(1.05); /* Efeito de aumento suave no botão */
+    color: var(--text); /* Mudança na cor do texto ao passar o mouse */
+}
+
+/* Efeito de foco nos botões */
+.top-buttons button:focus {
+    outline: none;
+    box-shadow: 0 0 15px var(--accent); /* Sombrinha mais pronunciada no foco */
+}
+
+/* Estilo do dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Botão do menu dropdown */
+.dropbtn {
+    background-color: var(--accent); /* Cor de fundo */
+    color: white;
+    padding: 10px 20px; /* Aumentando o tamanho do botão para torná-lo mais acessível */
+    font-size: 16px; /* Tamanho da fonte ajustado */
+    border: none;
+    border-radius: 12px; /* Bordas arredondadas para suavizar o visual */
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave */
+}
+
+/* Efeito de hover no botão do dropdown */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #d36ba6; /* Cor de hover mais suave */
+    outline: none;
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+}
+
+/* Conteúdo do dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px; /* Largura mínima ajustada */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Sombras para destaque */
+    border-radius: 12px; /* Bordas arredondadas */
+    overflow: hidden;
+    z-index: 1000;
+    margin-top: 0.4rem;
+}
+
+/* Estilo das opções dentro do dropdown */
+.dropdown-content a {
+    color: #333;
+    padding: 1rem 1.4rem;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+/* Efeito de hover nas opções do dropdown */
+.dropdown-content a:hover,
+.dropdown-content a:focus {
+    background-color: var(--accent); /* Mudança para a cor de destaque */
+    color: white;
+    outline: none;
+}
+
+/* Exibir o conteúdo do dropdown com animação */
+.show {
+    display: block;
+    animation: fadeIn 0.25s ease forwards;
+}
+
+/* Animação do dropdown */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

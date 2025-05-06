@@ -67,3 +67,40 @@ setInterval(() => {
     currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length; // Vai para a próxima frase, e volta ao início se chegar no final
     quoteElement.textContent = quotes[currentQuoteIndex]; // Atualiza o conteúdo da frase
 }, 5000); // Altera a frase a cada 5 segundos
+
+// Menu suspenso (dropdown)
+const btn = document.getElementById('dropdownBtn');
+const menu = document.getElementById('dropdown-menu');
+
+btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    if (expanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('show');
+    } else {
+        btn.setAttribute('aria-expanded', 'true');
+        menu.classList.add('show');
+    }
+});
+
+// Fechar dropdown ao clicar fora
+document.addEventListener('click', () => {
+    btn.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('show');
+});
+
+// Impedir que o clique dentro do menu feche-o imediatamente
+menu.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+// Lidar com cliques nas opções do menu
+menu.querySelectorAll('a').forEach((option) => {
+    option.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Você clicou em: ' + option.textContent);
+        btn.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('show');
+    });
+});
