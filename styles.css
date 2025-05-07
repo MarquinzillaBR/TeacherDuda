@@ -260,6 +260,27 @@ body.dark #toggleTheme::before {
     padding: 0 10px;
 }
 
+/* Estilos do Título Principal */
+.main-title {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.main-title h1 {
+    font-family: "Segoe Script", cursive;
+    font-size: 28px;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.main-title h2 {
+    font-size: 24px;
+    color: var(--note);
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 /* Estilos do Rodapé */
 footer {
     margin-top: 48px;
